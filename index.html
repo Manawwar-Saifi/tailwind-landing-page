@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Learning</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      @media (max-width: 480px) {
+        #companies-container {
+          overflow-x: hidden !important;
+        }
+      }
+    </style>
+  </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!--Navbar  -->
+    <nav class="p-3 flex bg-white justify-between items-center">
+      <a href="#0" id="brand" class="flex gap-2 items-center flex-1">
+        <img
+          src="https://img.freepik.com/free-vector/colorful-bird-illustration-gradient_343694-1741.jpg?t=st=1717432501~exp=1717436101~hmac=11791f1b88f9f1cc1c55becc348c9f5315b28d6e75e187a6aea6bbd6103ae482&w=826"
+          alt="Logo"
+          class="object-cover max-w-12 max-h-12"
+        />
+        <span class="text-lg font-medium font-display">ToDesktop</span>
+      </a>
+      <div id="nav-menu" class="hidden lg:flex gap-12">
+        <a href="#" class="font-medium hover:text-primary">Price</a>
+        <a href="#" class="font-medium hover:text-primary">Docs</a>
+        <a href="#" class="font-medium hover:text-primary">Charging</a>
+        <a href="#" class="font-medium hover:text-primary">Blogs</a>
+        <a href="#" class="font-medium hover:text-primary">Login</a>
+      </div>
+
+      <div class="flex-1 hidden lg:flex justify-end">
+        <a
+          href="#0"
+          class="flex gap-2 items-center border border-gray-400 px-6 py-2 rounded hover:border-gray-600"
+        >
+          <i class="fa-solid fa-atom"></i>
+          <span>Electron Developers</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <button class="p-2 lg:hidden" onclick="handleMenu()">
+        <i class="fa-solid fa-bars text-gray-500"></i>
+      </button>
+
+      <div
+        id="nav-dialog"
+        class="hidden fixed z-10 md:hidden bg-white inset-0 p-3"
+      >
+        <div id="nav-bar" class="flex justify-between">
+          <a href="#0" id="brand" class="flex gap-2 items-center">
+            <img
+              src="https://img.freepik.com/free-vector/colorful-bird-illustration-gradient_343694-1741.jpg?t=st=1717432501~exp=1717436101~hmac=11791f1b88f9f1cc1c55becc348c9f5315b28d6e75e187a6aea6bbd6103ae482&w=826"
+              alt="Logo"
+              class="object-cover max-w-12 max-h-12"
+            />
+            <span class="text-lg font-medium font-display">ToDesktop</span>
+          </a>
+          <button class="p-2 md:hidden" onclick="handleMenu()">
+            <i class="fa-solid fa-xmark text-gray-500"></i>
+          </button>
+        </div>
+        <div class="mt-6">
+          <a
+            href=""
+            class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg"
+            >Pricing</a
+          >
+          <a
+            href=""
+            class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg"
+            >Docs</a
+          >
+          <a
+            href=""
+            class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg"
+            >Charging</a
+          >
+          <a
+            href=""
+            class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg"
+            >Blog</a
+          >
+          <a
+            href=""
+            class="font-medium m-3 p-3 hover:bg-gray-100 block rounded-lg"
+            >Login</a
+          >
+        </div>
+        <div class="h-[1px] bg-gray-300"></div>
+        <a
+          href="#0"
+          class="mt-6 flex w-full gap-2 items-center px-6 py-4 rounded hover:bg-gray-100"
+        >
+          <i class="fa-solid fa-atom"></i>
+          <span>Electron Developers</span>
+        </a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <div
+        id="hero"
+        class="min-h-screen bg-gradient-to-b from-purple-50 via-orange-50 to bg-transparent"
+      >
+        <div
+          id="hero-container"
+          class="max-w-4xl mx-auto px-6 pb-32 pt-6 flex flex-col sm:items-center sm:text-center sm:pt-12"
+        >
+          <div
+            id="version-text"
+            class="flex my-6 gap-2 items-center border border-yellow-300 bg-yellow-50 px-3 py-1 rounded-lg w-fit shadow-md hover:shadow-lg hover:-translate-y-1 transition group"
+          >
+            <div
+              class="w-2 h-2 bg-yellow-400 rounded-full border border-yellow-600"
+            ></div>
+            <p class="font-display font-medium text-yellow-600">
+              v0.21.1
+              <span class="text-yellow-800">Find-in-page bug fixes </span>
+            </p>
+            <i
+              class="fa-solid fa-arrow-right text-yellow-600 group-hover:translate-x-1 duration-300 transition"
+            ></i>
+          </div>
+
+          <div id="hero-features" class="flex gap-8 my-6 hidden sm:flex">
+            <div class="flex justify-center gap-2 items-center text-gray-500">
+              <i class="fa-regular fa-file-code text-sm"></i>
+              <p>Code Optional.</p>
+            </div>
+
+            <div class="flex justify-center gap-2 items-center text-gray-500">
+              <i class="fa-solid fa-hand-fist"></i>
+              <p>Drag and Drop.</p>
+            </div>
+
+            <div class="flex justify-center gap-2 items-center text-gray-500">
+              <i class="fa-solid fa-laptop"></i>
+              <p>Windows, Mac, Linux.</p>
+            </div>
+          </div>
+
+          <h1 class="text-4xl font-semibold leading-snug mt-4 sm:text-7xl">
+            Web app to desktop app in minutes
+          </h1>
+          <p class="text-xl sm:text-2xl mt-8 text-gray-800 sm:leading-normal">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+            totam inventore saepe repellat minima nisi nobis dolore.
+          </p>
+          <div
+            id="button-container"
+            class="mt-12 flex flex-col sm:flex-row gap-4"
+          >
+            <button
+              class="px-8 py-3 font-semibold rounded-lg text-white bg-primary shadow-sm hover:bg-opacity-85"
+            >
+              Download Button
+            </button>
+            <button
+              class="px-8 py-3 font-semibold rounded-lg text-black bg-white border border-gray-400 shadow-sm hover:border-gray-800"
+            >
+              Read More Docs
+            </button>
+          </div>
+        </div>
+
+        <!-- companies -->
+        <div id="companies-container" class="flex gap-8 flex-col">
+          <div id="companies-title" class="flex justify-center gap-3">
+            <img
+              src="assets/arrow.png"
+              alt=""
+              class="translate-y-2"
+              width="30px"
+            />
+            <span class="font-medium">APP POWERED BY TODESKTOP</span>
+            <img
+              src="assets/arrow.png"
+              alt=""
+              class="translate-y-2 -scale-x-100"
+              width="30px"
+            />
+          </div>
+
+          <div id="companies-lines-group" class="flex flex-col gap-4">
+            <div
+              id="line1"
+              class="flex gap-4 w-screen -translate-x-48 transition-transform ease-linear"
+            >
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+            </div>
+            <div
+              id="line2"
+              class="flex gap-4 w-screen -translate-x-36 transition-transform ease-linear"
+            >
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+            </div>
+            <div
+              id="line3"
+              class="flex md:hidden gap-4 w-screen -translate-x-24 transition-transform ease-linear"
+            >
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+              <div
+                class="flex flex-col min-w-24 min-h-24 items-center justify-center rounded-xl border border-gray-300 md:min-h-32 md:min-w-32"
+              >
+                <img
+                  src="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-t-design_460848-13744.jpg?t=st=1717944617~exp=1717948217~hmac=223645b217da56aa2ec3934d63d65fc44be95e6f9f220c5212e1c298b50174a1&w=900"
+                  alt=""
+                  class="w-12 h-12 md:w-16 md:h-16 object-cover"
+                /><span class="text-[12px] md:text-[16px] font-semibold"
+                  >Unbounce</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- step by step   -->
+
+      <div
+        id="steps"
+        class="flex flex-col gap-6 px-6 py-12max-w-7xl mt-16 mx-auto lg:mt-32 lg:px-8"
+      >
+        <h2 class="text-5xl sm:font-semibold mb-14">How it works</h2>
+
+        <div class="rounded-xl border px-8 py-12 flex flex-col lg:flex-row lg:justify-between">
+
+          <div class="flex flex-col gap-8 lg:w-1/2">
+            <span
+              class="border border-yellow-300 bg-yellow-50 text-yellow-800 w-fit px-3 py-1 rounded-lg font-medium font-display "
+              >step 1</span
+            >
+            <h3 class="text-4xl">Bootstrap straight from your web app</h3>
+            <p class="text-lg font-light">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Necessitatibus aut autem dignissimos neque, sit error, magni illo
+              aliquid eius aperiam atque vitae, inventore impedit enim.
+            </p>
+            <ul class="grid grid-cols-2 gap-2">
+
+
+              <li class="flex gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <a
+                  href=""
+                  class="text-lg font-light border-b border-black border-opacity-30 hover:border-opacity-80"
+                  >Multiple windows</a
+                >
+              </li>
+              
+
+              <li class="flex gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <a
+                  href=""
+                  class="text-lg font-light border-b border-black border-opacity-30 hover:border-opacity-80"
+                  >Multiple windows</a
+                >
+              </li>
+              
+
+              <li class="flex gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <a
+                  href=""
+                  class="text-lg font-light border-b border-black border-opacity-30 hover:border-opacity-80"
+                  >Multiple windows</a
+                >
+              </li>
+              
+
+              <li class="flex gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <a
+                  href=""
+                  class="text-lg font-light border-b border-black border-opacity-30 hover:border-opacity-80"
+                  >Multiple windows</a
+                >
+              </li>
+              
+
+            </ul>
+          </div>
+
+          <div class="pt-12 lg:flex lg:justify-end">
+            <img src="https://img.freepik.com/free-photo/3d-rendering-website-hosting-concept_23-2149484780.jpg?t=st=1718208717~exp=1718212317~hmac=e620807c160da292b968c76187cb2e89078fa86fb28dc267fcec46e17ec3acf1&w=826" alt="" width="70%">
+          </div>
+
+        </div>
+
+        <div class="rounded-xl border px-8 py-12 flex flex-col lg:flex-row lg:justify-between">
+
+          <div class="flex flex-col gap-8 lg:w-1/2">
+            <span
+              class="border border-yellow-300 bg-yellow-50 text-yellow-800 w-fit px-3 py-1 rounded-lg font-medium font-display "
+              >step 2</span
+            >
+            <h3 class="text-4xl">Bootstrap straight from your web app</h3>
+            <p class="text-lg font-light">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Necessitatibus aut autem dignissimos neque, sit error, magni illo
+              aliquid eius aperiam atque vitae, inventore impedit enim.
+            </p>
+            <ul class="grid grid-cols-2 gap-2">
+
+
+              <li class="flex gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <a
+                  href=""
+                  class="text-lg font-light border-b border-black border-opacity-30 hover:border-opacity-80"
+                  >Multiple windows</a
+                >
+              </li>
+              
+
+              <li class="flex gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <a
+                  href=""
+                  class="text-lg font-light border-b border-black border-opacity-30 hover:border-opacity-80"
+                  >Multiple windows</a
+                >
+              </li>
+              
+
+              <li class="flex gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <a
+                  href=""
+                  class="text-lg font-light border-b border-black border-opacity-30 hover:border-opacity-80"
+                  >Multiple windows</a
+                >
+              </li>
+              
+
+              <li class="flex gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <a
+                  href=""
+                  class="text-lg font-light border-b border-black border-opacity-30 hover:border-opacity-80"
+                  >Multiple windows</a
+                >
+              </li>
+              
+
+            </ul>
+          </div>
+
+          <div class="pt-12 lg:flex lg:justify-end">
+            <img src="https://img.freepik.com/free-photo/3d-rendering-website-hosting-concept_23-2149484780.jpg?t=st=1718208717~exp=1718212317~hmac=e620807c160da292b968c76187cb2e89078fa86fb28dc267fcec46e17ec3acf1&w=826" alt="" width="70%">
+          </div>
+
+        </div>
+
+        <div class="rounded-xl border px-8 py-12 flex flex-col lg:flex-row lg:justify-between">
+
+          <div class="flex flex-col gap-8 lg:w-1/2">
+            <span
+              class="border border-yellow-300 bg-yellow-50 text-yellow-800 w-fit px-3 py-1 rounded-lg font-medium font-display "
+              >step 3</span
+            >
+            <h3 class="text-4xl">Bootstrap straight from your web app</h3>
+            <p class="text-lg font-light">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Necessitatibus aut autem dignissimos neque, sit error, magni illo
+              aliquid eius aperiam atque vitae, inventore impedit enim.
+            </p>
+            <ul class="grid grid-cols-2 gap-2">
+
+
+              <li class="flex gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <a
+                  href=""
+                  class="text-lg font-light border-b border-black border-opacity-30 hover:border-opacity-80"
+                  >Multiple windows</a
+                >
+              </li>
+              
+
+              <li class="flex gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <a
+                  href=""
+                  class="text-lg font-light border-b border-black border-opacity-30 hover:border-opacity-80"
+                  >Multiple windows</a
+                >
+              </li>
+              
+
+              <li class="flex gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <a
+                  href=""
+                  class="text-lg font-light border-b border-black border-opacity-30 hover:border-opacity-80"
+                  >Multiple windows</a
+                >
+              </li>
+              
+
+              <li class="flex gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <a
+                  href=""
+                  class="text-lg font-light border-b border-black border-opacity-30 hover:border-opacity-80"
+                  >Multiple windows</a
+                >
+              </li>
+              
+
+            </ul>
+          </div>
+
+          <div class="pt-12 lg:flex lg:justify-end">
+            <img src="https://img.freepik.com/free-photo/3d-rendering-website-hosting-concept_23-2149484780.jpg?t=st=1718208717~exp=1718212317~hmac=e620807c160da292b968c76187cb2e89078fa86fb28dc267fcec46e17ec3acf1&w=826" alt="" width="70%">
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bento Grid -->
+      <div
+        id="bento-grid"
+        class="px-6 py-12 max-w-7xl mt-16 mx-auto lg:px-8 lg:mt-32"
+      >
+        <h2 class="text-5xl sm:font-semibold mb-14 text-center max-w-2xl leading-normal">
+          ToDesktop handles the details
+        </h2>
+        <div
+          id="grid-container"
+          class="flex flex-col gap-6 lg:grid lg:grid-cols-3"
+          style="grid-auto-rows: 96px"
+        >
+          <div
+            class="row-start-1 row-end-3 group rounded-2xl gradient-hover-outer"
+          >
+            <div
+              class="bg-white rounded-2xl w-full h-full p-6 flex flex-col items-center gradient-hover-inner"
+            >
+              <h3 class="text-2xl">Native Notification</h3>
+              <img
+                src="https://images.pexels.com/photos/760714/pexels-photo-760714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt=""
+                class="w-[15rem] h-20 object-cover rounded"
+              />
+            </div>
+          </div>
+
+          <div
+            class="row-start-1 row-end-4 group rounded-2xl gradient-hover-outer"
+          >
+            <div
+              class="bg-white rounded-2xl w-full h-full p-6 flex flex-col items-center gradient-hover-inner"
+            >
+              <h3 class="text-2xl">Native Notification</h3>
+              <p class="text-lg text-center font-light">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                ipsum odio cum vero fugit accusantium quo! Delectus unde
+                nesciunt rerum.
+              </p>
+              <img
+                src="https://images.pexels.com/photos/760714/pexels-photo-760714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt=""
+                class="w-[15rem] h-20 object-cover rounded"
+              />
+            </div>
+          </div>
+
+          <div
+            class="row-start-1 row-end-3 group rounded-2xl gradient-hover-outer"
+          >
+            <div
+              class="bg-white rounded-2xl w-full h-full p-6 flex flex-col items-center gradient-hover-inner"
+            >
+              <h3 class="text-2xl">Native Notification</h3>
+              <img
+                src="https://images.pexels.com/photos/760714/pexels-photo-760714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt=""
+                class="w-[15rem] h-20 object-cover rounded"
+              />
+            </div>
+          </div>
+
+          <div
+            class="row-start-3 row-end-6 group rounded-2xl gradient-hover-outer"
+          >
+            <div
+              class="bg-white rounded-2xl w-full h-full p-6 flex flex-col items-center gradient-hover-inner"
+            >
+              <h3 class="text-2xl">Native Notification</h3>
+              <p class="text-lg text-center font-light">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                ipsum odio cum vero fugit accusantium quo! Delectus unde
+                nesciunt rerum.
+              </p>
+              <img
+                src="https://images.pexels.com/photos/760714/pexels-photo-760714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt=""
+                class="w-[15rem] h-20 object-cover rounded"
+              />
+            </div>
+          </div>
+
+          <div
+            class="row-start-4 row-end-6 group rounded-2xl gradient-hover-outer"
+          >
+            <div
+              class="bg-white rounded-2xl w-full h-full p-6 flex flex-col items-center gradient-hover-inner"
+            >
+              <h3 class="text-2xl">Native Notification</h3>
+              <img
+                src="https://images.pexels.com/photos/760714/pexels-photo-760714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt=""
+                class="w-[15rem] h-20 object-cover rounded"
+              />
+            </div>
+          </div>
+
+          <div
+            class="row-start-3 row-end-6 group rounded-2xl gradient-hover-outer"
+          >
+            <div
+              class="bg-white rounded-2xl w-full h-full p-6 flex flex-col items-center gradient-hover-inner"
+            >
+              <h3 class="text-2xl">Native Notification</h3>
+              <p class="text-lg text-center font-light">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                ipsum odio cum vero fugit accusantium quo! Delectus unde
+                nesciunt rerum.
+              </p>
+              <img
+                src="https://images.pexels.com/photos/760714/pexels-photo-760714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt=""
+                class="w-[15rem] h-20 object-cover rounded"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+
+      <div id="testimonials" class="container">
+        <h2 class="text-5xl sm:font-semibold mb-14 text-center">
+          Customer stories
+        </h2>
+        <div class="rounded-xl border flex flex-col lg:flex-row items-end lg:mx-16">
+          <div id="left" class="flex flex-col  gap-12 p-8">
+            <div class="h-4 w-fit">
+              <img src="https://clickup.com/assets/brand/clickup-logo-text.png" alt="" width="200">
+            </div>
+            
+            <h3 class="text-xl leading-relaxed">Clickup used ToDesktop to get their desktop app in front  of customers in days instead of months.</h3>
+
+            <div id="tag-container" class="flex flex-wrap gap-3">
+              
+              <div class="flex gap-2 items-center justify-center bg-yellow-50 w-fit border border-yellow-300 px-3 py-1 rounded-md text-yellow-800">
+                <i class="fa-solid fa-check"></i> <span class="font-display font-medium">Chormeless ui</span>
+              </div>
+
+
+              <div class="flex gap-2 items-center justify-center bg-yellow-50 w-fit border border-yellow-300 px-3 py-1 rounded-md text-yellow-800">
+                <i class="fa-solid fa-check"></i> <span class="font-display font-medium">Native spellcheck</span>
+              </div>
+
+
+              <div class="flex gap-2 items-center justify-center bg-yellow-50 w-fit border border-yellow-300 px-3 py-1 rounded-md text-yellow-800">
+                <i class="fa-solid fa-check"></i> <span class="font-display font-medium">Task time in menubar</span>
+              </div>
+
+
+              <div class="flex gap-2 items-center justify-center bg-yellow-50 w-fit border border-yellow-300 px-3 py-1 rounded-md text-yellow-800">
+                <i class="fa-solid fa-check"></i> <span class="font-display font-medium">Notification count in the dock</span>
+              </div>
+
+              <div class="flex gap-2 items-center justify-center bg-yellow-50 w-fit border border-yellow-300 px-3 py-1 rounded-md text-yellow-800">
+                <i class="fa-solid fa-check"></i> <span class="font-display font-medium">Global hotkey to create task</span>
+              </div>
+
+            </div>
+
+            <p class="text-lg font-light text-gray-500 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsa voluptatem consequatur nisi, dolores eaque eveniet, <span class="text-gray-800">laborum a, nulla ut dolorem </span>maiores ad quae explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque esse quaerat, <span class="text-gray-800">quod delectus inventore rerum vero?</span> Minima optio praesentium sunt.</p>
+
+            <div id="user-card" class="flex gap-4">
+              <div class="w-12">
+                <img src="https://img.freepik.com/free-psd/close-up-kid-expression-portrait_23-2150193262.jpg?t=st=1718290768~exp=1718294368~hmac=6cbc8a6f66a2ef8fc14a15d2b3f33c3709b87ac1dc8047e46d253ebf92fc08cd&w=826" alt="" class="rounded-full border border-gray-200">
+              </div>
+              <div class="flex flex-col">
+                <h3 class="">Zeb Evans</h3>
+                <p class="text-gray-500">Founder and CEO,<a href="" class="anchor-hover">Clickup</a></p>
+              </div>
+            </div>
+
+          </div>
+          <div id="right">
+            <img src="https://images.unsplash.com/photo-1491951931722-5a446214b4e2?q=80&w=1967&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="80%" alt="" class="pl-12">
+          </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row justify-between gap-4 px-16 my-16">
+
+          <div class="flex rounded-2xl gradient-hover-outer group">
+            <div class="rounded-2xl p-6 gradient-hover-inner flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-200 flex items-center justify-center rounded-full">
+                  <i class="fa-solid fa-code text-indigo-800"></i>
+                </div>
+                <h3 class="text-2xl font-semibold">Native APIs</h3>  
+              </div>
+              <p class="text-lg font-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio voluptatibus ipsam cumque culpa tempora reiciendis deserunt sunt nulla? Unde molestiae, delectus similique vel facilis sapiente excepturi quia animi.</p>
+              <div class="flex gap-4">
+
+
+                <div class="flex">
+                  <div class="w-12 h-12 rounded-full flex justify-center items-center overflow-hidden -mr-3 border border-white">
+                    <img src="https://images.unsplash.com/photo-1544507888-56d73eb6046e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="min-w-16 min-h-16">
+                  </div>
+                  <div class="w-12 h-12 rounded-full flex justify-center items-center overflow-hidden border border-white">
+                    <img src="https://images.unsplash.com/photo-1554177255-61502b352de3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="min-w-16 min-h-16">
+                  </div>
+                </div>
+
+                <div class="flex">
+                  <div class="flex flex-col">
+                    <h3>Rick Pastoor</h3>
+                    <a href="#" class="anchor-hover w-fit text-gray-500">Rise</a>
+                  </div>
+                </div>
+
+               
+
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div class="flex rounded-2xl gradient-hover-outer group">
+            <div class="rounded-2xl p-6 gradient-hover-inner flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-200 flex items-center justify-center rounded-full">
+                  <i class="fa-solid fa-code text-indigo-800"></i>
+                </div>
+                <h3 class="text-2xl font-semibold">Native APIs</h3>  
+              </div>
+              <p class="text-lg font-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio voluptatibus ipsam cumque culpa tempora reiciendis deserunt sunt nulla? Unde molestiae, delectus similique vel facilis sapiente excepturi quia animi.</p>
+              <div class="flex gap-4">
+
+
+                <div class="flex">
+                  <div class="w-12 h-12 rounded-full flex justify-center items-center overflow-hidden -mr-3 border border-white">
+                    <img src="https://images.unsplash.com/photo-1544507888-56d73eb6046e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="min-w-16 min-h-16">
+                  </div>
+                  <div class="w-12 h-12 rounded-full flex justify-center items-center overflow-hidden border border-white">
+                    <img src="https://images.unsplash.com/photo-1554177255-61502b352de3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="min-w-16 min-h-16">
+                  </div>
+                </div>
+
+                <div class="flex">
+                  <div class="flex flex-col">
+                    <h3>Rick Pastoor</h3>
+                    <a href="#" class="anchor-hover w-fit text-gray-500">Rise</a>
+                  </div>
+                </div>
+
+               
+
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="flex rounded-2xl gradient-hover-outer group">
+            <div class="rounded-2xl p-6 gradient-hover-inner flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-200 flex items-center justify-center rounded-full">
+                  <i class="fa-solid fa-code text-indigo-800"></i>
+                </div>
+                <h3 class="text-2xl font-semibold">Native APIs</h3>  
+              </div>
+              <p class="text-lg font-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio voluptatibus ipsam cumque culpa tempora reiciendis deserunt sunt nulla? Unde molestiae, delectus similique vel facilis sapiente excepturi quia animi.</p>
+              <div class="flex gap-4">
+
+
+                <div class="flex">
+                  <div class="w-12 h-12 rounded-full flex justify-center items-center overflow-hidden -mr-3 border border-white">
+                    <img src="https://images.unsplash.com/photo-1544507888-56d73eb6046e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="min-w-16 min-h-16">
+                  </div>
+                  <div class="w-12 h-12 rounded-full flex justify-center items-center overflow-hidden border border-white">
+                    <img src="https://images.unsplash.com/photo-1554177255-61502b352de3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="min-w-16 min-h-16">
+                  </div>
+                </div>
+
+                <div class="flex">
+                  <div class="flex flex-col">
+                    <h3>Rick Pastoor</h3>
+                    <a href="#" class="anchor-hover w-fit text-gray-500">Rise</a>
+                  </div>
+                </div>
+
+               
+
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+
+        <div class="rounded-xl bg-black flex flex-col lg:flex-row lg:pt-16 pt-6 lg:mx-16 mt-6">
+          <div id="left" class="flex flex-col lg:gap-8  gap-4 p-8 lg:flex-1">
+            <span class="text-2xl text-gray-400 font-display font-medium uppercase">Ready to start building</span>
+            
+            <h2 class="text-4xl lg:text-6xl text-white leading-snug">Create your desktop app for free*.</h2>
+
+            
+
+            <p class="text-lg font-light  text-gray-300 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsa voluptatem consequatur nisi, dolores eaque eveniet, laborum a, nulla ut dolorem </span>maiores ad quae explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque esse quaerat,quod delectus inventore rerum vero?</span> Minima optio praesentium sunt.</p>
+
+            <button class=" bg-primary text-white py-3 rounded-lg hover:bg-opacity-90 flex gap-3 justify-center items-center"><i class="fa-solid fa-download"></i><span>Download ToDesktop Builder</span></button>
+            <p class="text-gray-400 text-xs italic leading-tight">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque possimus velit sed repudiandae sapiente culpa quaerat ab laudantium iusto eveniet.</p>
+           
+
+          </div>
+          <div id="right" class="lg:w-1/2">
+            <img src="https://images.unsplash.com/photo-1491951931722-5a446214b4e2?q=80&w=1967&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="80%" alt="" class="pl-12">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pricing -->
+
+      <div id="pricing" class="container">
+        <h2 class="h2-style">Choose a plan that fits your needs</h2>
+        <div class="flex flex-col lg:flex-row gap-6">
+
+
+          <div class="border rounded-xl px-8 pb-8 flex flex-col gap-2 py-16 lg:border-none lg:bg-slate-50 flex-1">
+            <h3 class="text-4xl">Free</h3>
+            <p class="text-lg font-light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi totam.</p>
+            <p class="uppercase">Key Features</p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <span class="text-lg font-light text-gray-800">Lorem ipsum dolor sit.</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <span class="text-lg font-light text-gray-800">Lorem ipsum dolor sit.</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <span class="text-lg font-light text-gray-800">Lorem ipsum dolor sit.</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-xmark text-gray-500"></i>
+                <span class="text-lg font-light text-gray-800">Lorem ipsum dolor sit.</span>
+              </li>
+            </ul>
+            <button class=" border px-8 py-3 font-display font-medium text-primary  rounded-lg hover:border-gray-800">
+              Read Docs.
+            </button>
+          </div>
+
+
+          <div class="border rounded-xl px-8 pb-8 flex flex-col gap-2 py-16 lg:border-none lg:bg-slate-50 flex-1">
+            <h3 class="text-4xl">Essential</h3>
+            <p class="text-lg font-light">Lorem ipsum dolor sit.</p>
+            <p class="text-lg font-light font-semibold"><span class="text-2xl font-semibold">$99/Month</span></p>
+            <p class="uppercase">Key Features</p>
+            
+            <ul class="space-y-3">
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <span class="text-lg font-light text-gray-800">Lorem ipsum dolor sit.</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <span class="text-lg font-light text-gray-800">Lorem ipsum dolor sit.</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <span class="text-lg font-light text-gray-800">Lorem ipsum dolor sit.</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-xmark text-gray-500"></i>
+                <span class="text-lg font-light text-gray-800">Lorem ipsum dolor sit.</span>
+              </li>
+            </ul>
+            <button class=" border px-8 py-3 font-display font-medium text-primary  rounded-lg hover:border-gray-800">
+              Read Docs.
+            </button>
+          </div>
+
+
+          <div class="border rounded-xl px-8 pb-8 flex flex-col gap-2 py-16 relative lg:border-none lg:bg-slate-50 flex-1">
+            <p class="text-blue-800 bg-indigo-100 border  w-fit px-4 py-2 font-display rounded-full text-sm absolute top-0 right-8 -translate-y-1/2 font-semibold">Most Popular</p>
+            <h3 class="text-4xl">Professional</h3>
+            <p class="text-lg font-light">Lorem ipsum dolor sit</p>
+            <p class="text-lg font-light font-semibold"><span class="text-2xl font-semibold">$240/Month</span></p>
+
+
+            <p class="uppercase">Key Features</p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <span class="text-lg font-light text-gray-800">Lorem ipsum dolor sit.</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <span class="text-lg font-light text-gray-800">Lorem ipsum dolor sit.</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-check text-gray-500"></i>
+                <span class="text-lg font-light text-gray-800">Lorem ipsum dolor sit.</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-xmark text-gray-500"></i>
+                <span class="text-lg font-light text-gray-800">Lorem ipsum dolor sit.</span>
+              </li>
+            </ul>
+            <button class=" px-8 py-3 font-display font-medium text-white bg-primary hover:opacity-85  rounded-lg">
+              Read Docs.
+            </button>
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+      <!-- FAQ -->
+
+      <div id="faq" class="container">
+        <h2 class="h2-style">FAQs</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 mt-6 gap-6 items-start">
+
+          <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+              <dt class="flex justify-between items-center cursor-pointer" aria-controls="faq-1">
+                <p class="font-semibold text-lg ">Is ToDesktop For Me? </p>
+                <i class="fa-solid fa-chevron-up -rotate-180 transition-transform"></i> 
+              </dt>
+              <dd id="faq-1" class="hidden text-lg font-light mt-6">
+                <p>That Depends! if you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+              </dd>
+          </div>
+
+
+          <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+              <dt class="flex justify-between items-center cursor-pointer" aria-controls="faq-2">
+                <p class="font-semibold text-lg ">Is ToDesktop For Me? </p>
+                <i class="fa-solid fa-chevron-up -rotate-180 transition-transform"></i> 
+              </dt>
+              <dd id="faq-2" class="hidden text-lg font-light mt-6">
+                <p>That Depends! if you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+              </dd>
+          </div>
+
+          <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+              <dt class="flex justify-between items-center cursor-pointer" aria-controls="faq-3">
+                <p class="font-semibold text-lg ">Is ToDesktop For Me? </p>
+                <i class="fa-solid fa-chevron-up -rotate-180 transition-transform"></i> 
+              </dt>
+              <dd id="faq-3" class="hidden text-lg font-light mt-6">
+                <p>That Depends! if you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+              </dd>
+          </div>
+
+
+          <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+              <dt class="flex justify-between items-center cursor-pointer" aria-controls="faq-4">
+                <p class="font-semibold text-lg ">Is ToDesktop For Me? </p>
+                <i class="fa-solid fa-chevron-up -rotate-180 transition-transform"></i> 
+              </dt>
+              <dd id="faq-4" class="hidden text-lg font-light mt-6">
+                <p>That Depends! if you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+              </dd>
+          </div>
+
+
+          <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+              <dt class="flex justify-between items-center cursor-pointer" aria-controls="faq-5">
+                <p class="font-semibold text-lg ">Is ToDesktop For Me? </p>
+                <i class="fa-solid fa-chevron-up -rotate-180 transition-transform"></i> 
+              </dt>
+              <dd id="faq-5" class="hidden text-lg font-light mt-6">
+                <p>That Depends! if you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+              </dd>
+          </div>
+
+          <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+            <dt class="flex justify-between items-center cursor-pointer" aria-controls="faq-6">
+              <p class="font-semibold text-lg ">Is ToDesktop For Me? </p>
+              <i class="fa-solid fa-chevron-up -rotate-180 transition-transform"></i> 
+            </dt>
+            <dd id="faq-6" class="hidden text-lg font-light mt-6">
+              <p>That Depends! if you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+            </dd>
+        </div>
+
+
+
+        </div>
+      </div>
+
+      <div class="h-[1000px]"></div>
+    </main>
+  </body>
+</html>
